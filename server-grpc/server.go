@@ -31,7 +31,7 @@ var (
 
 type leagueServer struct{}
 
-func constructChampionResponse(champion map[string]interface{}) *pb.GetChampionByKeyResponse {
+func constructChampionResponse(champion interface{}) *pb.GetChampionByKeyResponse {
 	m := map[string]interface{}{
 		"champion": champion,
 	}
@@ -134,7 +134,7 @@ func (*leagueServer) GetSummonerStatsBiDirectional(stream pb.LeagueApi_GetSummon
 	}
 }
 
-func constructMatchResponse(match map[string]interface{}) *pb.GetMatchResponse {
+func constructMatchResponse(match interface{}) *pb.GetMatchResponse {
 	m := map[string]interface{}{
 		"match": match,
 	}
